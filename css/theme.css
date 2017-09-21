@@ -1,0 +1,472 @@
+/**
+* Custom styles for this theme
+*/
+#front-page-edit-link {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+#front-page-edit-link .tabs {
+  border: none;
+}
+#front-page-edit-link li:nth-child(1) {
+  display: none;
+}
+#front-page-edit-link li:nth-child(3) {
+  display: none;
+}
+#front-page-edit-link li:nth-child(2) a {
+  padding: 10px 30px;
+}
+/**********************/
+body {
+  color: #333333;
+  font-family: 'Lato', sans-serif;
+  font-size: 18.75px;
+  line-height: 1.8em;
+  font-weight: 300;
+  -ms-overflow-style: scrollbar;
+}
+h1,
+.h1 {
+  font-size: 45px;
+}
+h2,
+.h2 {
+  font-size: 24px;
+}
+h3,
+.h3 {
+  font-size: 22px;
+}
+h4,
+.h4 {
+  font-size: 21px;
+}
+h5,
+.h5 {
+  font-size: 18px;
+}
+h6,
+.h6 {
+  font-size: 16px;
+}
+a {
+  outline: none;
+  color: #039be5;
+  text-decoration: underline;
+}
+a:link,
+a:visited {
+  outline: none;
+  text-decoration: none;
+}
+a:active,
+a:focus,
+a:hover {
+  color: #23527c;
+  text-decoration: underline;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 1em;
+  color: #333333;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+ul,
+ul.menu {
+  margin: 20px 0 10px 40px;
+  padding: 0;
+}
+ul li,
+ul.menu li {
+  padding: 0 0 10px 20px;
+  background: url("../images/li-bg.png") no-repeat 0 8px;
+  list-style: none;
+}
+.no-list {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.no-list li {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.block ul {
+  margin: 0 0 15px 15px;
+  padding: 0;
+}
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+  margin: 10px 0 10px 25px;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+p {
+  margin: 0 0 15px;
+}
+.no-margin {
+  margin: 0;
+}
+.no-bullets li {
+  background: none;
+}
+.no-padding {
+  padding: 0;
+}
+.ul-div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+ul.primary li {
+  background: none;
+}
+ul.links.inline li {
+  display: inline-block;
+  padding: 0;
+  background: none;
+  list-style: none;
+  font-weight: normal !important;
+  font-size: initial;
+}
+ul.links.inline li a {
+  min-width: inherit;
+  padding: 0 !important;
+  background: none !important;
+}
+ul.links.inline li a:after {
+  content: '' !important;
+}
+ul.links.inline li a:hover {
+  background: none;
+  color: inherit;
+}
+tbody {
+  border: none;
+}
+body {
+  line-height: 1.8em;
+  margin: 0;
+}
+/*................ Helpers ...................*/
+.position-a {
+  position: absolute !important;
+}
+.position-r {
+  position: relative !important;
+}
+.margin-bottom {
+  margin: 0 0 26px;
+}
+.margin-top {
+  margin: 40px 0 0;
+}
+.text-tr {
+  text-transform: uppercase;
+}
+.ul-no-style ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.ul-li-no-style ul li {
+  padding: 0 !important;
+  background: none !important;
+  list-style: none !important;
+}
+.clear-both {
+  clear: both;
+}
+.clear-left {
+  clear: left;
+}
+.clear-right {
+  clear: right;
+}
+.text-a-r {
+  text-align: right;
+}
+.text-a-c {
+  text-align: center;
+}
+.hidn-txt {
+  display: none !important;
+}
+.text-decoration-none a {
+  text-decoration: none;
+}
+.ui-clearfix {
+  clear: both;
+}
+.center {
+  text-align: center;
+}
+.no-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+/*............... page layouts.............*/
+#container {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+#sidebar-left {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #sidebar-left {
+    float: left;
+    width: 25%;
+  }
+}
+#main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #main {
+    float: left;
+    width: 100%;
+  }
+}
+#sidebar-right {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  #sidebar-right {
+    float: left;
+    width: 25%;
+  }
+}
+/*............. left sidebar ...............*/
+@media (min-width: 768px) {
+  .sidebar-left #sidebar-left {
+    right: 75%;
+  }
+}
+.sidebar-left #main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .sidebar-left #main {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 768px) {
+  .sidebar-left #main {
+    left: 25%;
+  }
+}
+/*............. right sidebar ...............*/
+.sidebar-right #main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .sidebar-right #main {
+    float: left;
+    width: 75%;
+  }
+}
+/*............. two sidebar ...............*/
+@media (min-width: 768px) {
+  .two-sidebars #sidebar-left {
+    right: 50%;
+  }
+}
+.two-sidebars #main {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  .two-sidebars #main {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 768px) {
+  .two-sidebars #main {
+    left: 25%;
+  }
+}
+.icon-awesome {
+  padding-right: 12px;
+  font-family: fontawesome;
+}
+.ui-btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  border-radius: 3px;
+  background-color: #25988b;
+  font-weight: normal;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  padding: 18px;
+}
+.navbar-default {
+  background-color: #ffffff;
+  border-color: #ffffff;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: #ffffff;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  color: #333333;
+  background-color: #ffffff;
+}
+header {
+  border-bottom: 2px solid #25988b;
+}
+header .topbar {
+  background-color: #25988b;
+  padding: 10px;
+}
+header .social-media ul li {
+  display: inline-block;
+  padding: 0 3px;
+}
+header .social-media ul li a {
+  font-size: 1.200em;
+  color: #ffffff;
+}
+header .social-media ul li a span {
+  transition: all 0.3s ease-in-out;
+}
+header .social-media ul li a .facebook:hover {
+  color: #3d5b96;
+}
+header .social-media ul li a .twitter:hover {
+  color: #3399cc;
+}
+header .social-media ul li a .linkedin:hover {
+  color: #1884bb;
+}
+header .contact ul {
+  margin-bottom: 0;
+  color: #ffffff;
+}
+header .contact ul li {
+  display: inline-block;
+  padding: 0 5px;
+}
+header .contact ul li span {
+  padding-right: 5px;
+}
+header .contact ul li a {
+  color: #ffffff;
+  font-size: 0.880em;
+  vertical-align: bottom;
+  font-weight: 300;
+  text-decoration: underline;
+}
+header .contact ul li a:hover {
+  text-decoration: none;
+}
+header #navigation {
+  float: right;
+}
+header ul.primary-links li {
+  padding: 0;
+}
+header ul.primary-links li a {
+  color: #333333;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.800em;
+  font-weight: normal;
+  text-transform: capitalize;
+  padding: 10px;
+  border-bottom: 1px solid transparent;
+  text-decoration: none;
+}
+header ul.primary-links li a:hover {
+  border-color: #25988b;
+}
+header .logo {
+  margin-top: 10px;
+}
+header .navbar {
+  padding: 0;
+  margin: 0;
+}
+header .navbar .primary-links {
+  padding-top: 25px;
+}
+header .navbar .navbar-header {
+  max-width: 284px;
+}
+header .mob-nav .logo {
+  float: left;
+  padding: 5px 15px;
+  max-width: 280px;
+  padding-top: 0;
+  margin-top: 0;
+}
+header .mob-nav .navbar-toggle {
+  background-color: white;
+  color: #25988b;
+  border: none;
+  font-size: 1.120em;
+  margin-top: 0;
+}
+header .mob-nav ul.primary-links li {
+  display: block;
+}
+@media only screen and (max-width: 1199px) {
+  header ul.primary-links li a {
+    padding: 5px;
+  }
+  header .navbar .navbar-header {
+    max-width: 260px;
+  }
+}
+@media only screen and (max-width: 991px) {
+  header .navbar {
+    text-align: center;
+  }
+  header .navbar .navbar-header {
+    max-width: none;
+    float: none;
+  }
+  header #navigation {
+    float: none;
+  }
+  header .mob-nav .logo {
+    padding-left: 15px;
+  }
+}
+@media only screen and (max-width: 575px) {
+  header .mob-nav .logo {
+    max-width: 250px;
+  }
+}
