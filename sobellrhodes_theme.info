@@ -7,3 +7,9 @@ stylesheets[all][] = css/bootstrap.css
 stylesheets[all][] = css/theme.css
 stylesheets[print][] = css/print.css
 scripts[] = js/bootstrap.min.js
+scripts[] = js/scroll_top.js
+
+
+regions[left]                   = Left sidebar
+regions[right]                  = Right sidebar
+regions[footer]                 = Footer

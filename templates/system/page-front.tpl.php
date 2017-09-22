@@ -141,11 +141,14 @@
                 <div class="row">
                     <nav class="navbar navbar-default">
 
-                        <div class="hidden-xs">
+                        <div class="desk-nav hidden-xs">
                             <div class="navbar-header">
                                 <?php if (!empty($logo)) { ?>
-                                    <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo" class="img-responsive logo">
-                                        <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+                                    <a href="<?php print $front_page; ?>" title="<?php
+                                    print t($site_name);
+                                    ;
+                                    ?>" rel="home" id="logo" class="img-responsive logo">
+                                        <img src="<?php print $logo; ?>" alt="<?php print t($site_name); ?>" />
                                     </a>
                                 <?php } ?>
                             </div>
@@ -166,36 +169,33 @@
                             </div>
                         </div>
 
-                        <div class="visible-xs">
-                            <div class="mob-nav visible-xs">
-                                <nav class="navbar navbar-default">
-                                    <!-- Brand and toggle get grouped for better mobile display -->
-                                    <div class="navbar-header">
+                        <div class="mob-nav visible-xs">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
 
 
-                                        <!-- header-logo -->
-                                        <div id="logo" class="logo">
-                                            <?php if (!empty($logo)) { ?>
-                                                <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="logo-link">
-                                                    <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-                                                </a>
-                                            <?php } ?>
+                                <!-- header-logo -->
+                                <div id="logo" class="logo">
+                                    <?php if (!empty($logo)) { ?>
+                                        <a href="<?php print $front_page; ?>" title="<?php print t($site_name); ?>" rel="home" class="logo-link">
+                                            <img src="<?php print $logo; ?>" alt="<?php print t($site_name); ?>" />
+                                        </a>
+                                    <?php } ?>
 
-                                        </div>
-                                        <!-- /header-logo -->
+                                </div>
+                                <!-- /header-logo -->
 
-                                        <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                                            <span class="sr-only">Toggle navigation</span>
-                                            <i class="fa fa-bars" aria-hidden="true"></i>
-                                        </button>
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span> 
+                                </button>
 
-                                    </div>
-                                    <!-- Collection of nav links and other content for toggling -->
-                                    <div id="navbarCollapse" class="collapse navbar-collapse">
-                                        <?php print theme('links', $primary_links, array('class' => 'links primary-links nav navbar-nav')); ?>
+                            </div>
+                            <!-- Collection of nav links and other content for toggling -->
+                            <div id="navbarCollapse" class="collapse navbar-collapse">
+                                <?php print theme('links', $primary_links, array('class' => 'links primary-links nav navbar-nav')); ?>
 
-                                    </div>
-                                </nav>
                             </div>
                         </div>
                     </nav>	
@@ -251,17 +251,61 @@
 
         </div> <!-- /page -->
 
-        <div id="footer-wrapper">
-            <div id="footer">
-                <?php print $footer_message; ?>
-                <?php
-                if (!empty($footer)): print $footer;
-                endif;
-                ?>
-            </div> <!-- /footer -->
-        </div> <!-- /footer-wrapper -->
+        <footer class="footer-wrapper" >
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 ">
+
+                        <?php if (!empty($secondary_links)): ?>
+                            <div id="secondary" class="clear-block">
+                                <?php print theme('links', $secondary_links, array('class' => 'links secondary-links ul-div')); ?>
+                            </div>
+                        <?php endif; ?>   
+
+
+                        <?php
+                        if (!empty($footer)) {
+                            print $footer;
+                        }
+                        ?>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="social-media">
+                            <ul class="text-center list-inline">
+                                <li>
+                                    <a href="https://www.facebook.com/sobellrhodes?fref=ts"><span class="fa fa-2x fa-facebook-square facebook" aria-hidden="true"></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/SobellRhodesLLP"><span class="fa fa-2x fa-twitter-square twitter" aria-hidden="true"></span></a>
+                                </li>
+                                <li>
+                                    <a href="http://www.youtube.com/user/SobellRhodesLLP"><span class="fa fa-2x fa-youtube-square youtube" aria-hidden="true"></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/107252012201297601658/posts"><span class="fa fa-2x fa-google-plus-square google-plus" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo">
+                            <img src="http://www.dev.sobellrhodes.gridhosted.co.uk/wp-content/themes/sobellrhodes/resources/img/logo-white.png" alt=""/>
+                        </div>
+                        <div class="developer">
+                            <p class="text-center">Designed and Developed by <br> <a href="http://vanillaactive.com" target="_blank" >Vanilla Active</a></p>
+                        </div>
+                    </div>
+                </div><!-- /footer -->
+            </div>
+            <div class="copyright text-center">
+                <div class="container">
+                    <?php print $footer_message; ?>
+                </div>
+            </div>
+
+
+        </footer> <!-- /footer-wrapper -->
 
         <?php print $closure; ?>
-
+        <a href="#" class="scrollToTop"></a>
     </body>
 </html>

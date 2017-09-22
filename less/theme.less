@@ -78,8 +78,7 @@ p {
 }
 .ul-div{
     margin: 0 !important;
-    padding: 0 !important;
-
+    padding :0 !important;
 }
 
 ul.primary li {
@@ -228,7 +227,6 @@ body{
     text-align: center;
     font-size: 14px;
     color:white;
-    padding: 18px;
 }
 
 //overide
@@ -260,24 +258,6 @@ header{
                 a{
                     font-size: 1.200em;
                     color:@color-white;
-                    span{
-                        transition: all 0.3s ease-in-out;
-                    }
-                    .facebook{
-                        &:hover{
-                            color: @color-brand-facebook;
-                        }
-                    }
-                    .twitter{
-                        &:hover{
-                            color: @color-brand-twitter;
-                        }
-                    }
-                    .linkedin{
-                        &:hover{
-                            color: @color-brand-linkedin;
-                        }
-                    }
                 }
             }
         }
@@ -307,82 +287,105 @@ header{
             }
         }
     }
-    #navigation{
-        float: right;
-    }
-    ul.primary-links{
-        li{
-            padding:0;
-            a{
-                color: @color-base;
-                font-family:@font-family-lato;
-                font-size: 0.800em;
-                font-weight: normal;
-                text-transform: capitalize;
-                padding: 10px;
-                border-bottom: 1px solid transparent;
-                text-decoration: none;
 
-                &:hover{
-                    border-color: @color-green;
+
+    .navbar{
+        padding: 0;
+        margin: 0;
+        .mob-nav,.desk-nav{
+
+            ul.primary-links{
+
+                padding: 0;
+                padding: 25px 0;
+                margin: 0;
+                li{
+                    padding: 0;
+                    a{
+                        color: @color-base;
+                        font-family:@font-family-lato;
+                        font-size: 0.800em;
+                        font-weight: normal;
+                        text-transform: capitalize;
+                        padding: 10px 7px;
+                        border-bottom: 1px solid transparent;
+                        text-decoration: none;
+
+                        &:hover{
+                            border-color: @color-green;
+                        }
+
+                    }
+                }
+
+            }
+
+        }
+
+        .desk-nav{
+            .withprimary{
+                float: right;
+            }
+            .logo {
+                margin-top: 10px;
+            }
+
+            .navbar-header{
+                max-width: 284px;
+
+            }
+        }
+
+        .mob-nav{
+            .logo{
+                float: left;
+                padding: 5px 15px;
+                max-width: 280px;
+                padding-top: 0;
+                margin-top: 0;
+            }
+            .navbar-toggle{
+                border: none;
+                padding: 10px 15px 0 0;
+                span{
+                    background-color: @color-green;
+                }
+            }
+            .navbar-collapse{
+                padding-left: 0;
+            }
+            ul.primary-links{
+
+                li{
+                    display: block;   
+                    a{
+                        padding-left: 25px;
+                    }
                 }
 
             }
         }
 
-    }
-    .logo {
-        margin-top: 10px;
-    }
-    .navbar{
-        padding: 0;
-        margin: 0;
-        .primary-links{
-            padding-top: 25px;
-        }
-        .navbar-header{
-            max-width: 284px;
-        }
-    }
-    .mob-nav{
-        .logo{
-            float: left;
-            padding: 5px 15px;
-            max-width: 280px;
-            padding-top: 0;
-            margin-top: 0;
-        }
-        .navbar-toggle{
-            background-color: white;
-            color: @color-green;
-            border: none;
-            font-size: 1.120em;
-            margin-top: 0;
-        }
-        ul.primary-links{
-
-            li{
-                display: block;             
-            }
-
-        }
     }
 
 }
 
+
 @media only screen and (max-width : 1199px) {
     header{
-        ul.primary-links{
-            li{
-                a{
-                    padding: 5px;
-                }
-            }
-
-        }
         .navbar{
-            .navbar-header{
-                max-width: 260px;
+            .desk-nav{
+                .navbar-header{
+                    max-width: 260px;
+                }
+                ul.primary-links{
+                    li{
+                        a{
+                            padding: 5px;
+                        }
+                    }
+
+                }
             }
         }
 
@@ -391,14 +394,18 @@ header{
 @media only screen and (max-width : 991px) {
     header{
         .navbar{
-            .navbar-header{
-                max-width:none;
-                float: none;
+            .desk-nav{
+                text-align: center;
+                .navbar-header{
+                    max-width:none;
+                    float: none;
+                }
+                ul.primary-links{
+                    padding-bottom: 20px;
+                }
             }
-            text-align: center;
-
-
         }
+
         #navigation{
             float: none;;
         }
@@ -410,13 +417,159 @@ header{
 
     }
 }
-@media only screen and (max-width : 575px) {
+@media only screen and (max-width :767px) {
     header{
-        .mob-nav{
-            .logo{
-                max-width: 250px;
+        .navbar{
+            .mob-nav{
+
             }
         }
     }
+}
+@media only screen and (max-width : 575px) {
+    header{
+        .navbar{
+            .mob-nav{
+                .logo{
+                    max-width: 240px;
+                }
+            }
+        }
+    }
+}
+
+
+
+footer.footer-wrapper{
+    color:@color-white;
+    background-color: #2E2E2E;
+    .info{
+        color: @color-white;
+        font-size: 12.56px;
+        line-height: 22.8px;
+        text-align: justify;
+    }
+    .copyright{
+        overflow: hidden;
+        height: 50px;
+        line-height: 50px;
+        color: rgba(255,255,255,.8);
+        font-size: 0.747em;
+        background-color: rgba(0,0,0,.3);
+    }
+    .logo{
+        margin: 20px auto;
+    }
+    .social-media{
+        a{
+            color:@color-white;
+        }
+    }
+    .developer{
+        font-size:0.640em;
+        line-height: 1.8;
+        a{
+            font-size: 14px;
+            line-height: 0.747em;
+        }
+    }
+    .secondary-links{
+        margin: 15px 0 0 0;
+        li{
+            padding:10px 0;
+            display: inline-block;
+            a{
+                line-height: 40px;
+                text-decoration: underline;
+            }
+
+            &:nth-child(1):after {
+                content: ' | ';
+                color: white;
+                padding: 0 10px;
+                a{
+
+                }
+            }
+
+
+        }
+    }
+    a{
+        color:@color-white;
+        &:hover{
+            color:@color-green-light;
+            text-decoration: none !important;
+        }
+    }
+
+}
+@media only screen and (max-width :991px) {
+    footer.footer-wrapper{
+        text-align: center;
+        .logo{
+            max-width: 250px;
+        }
+    }
+}
+
+.social-media{
+    ul {
+        li {
+            a{
+                span{
+                    transition: all 0.3s ease-in-out;
+                }
+                .facebook{
+                    &:hover{
+                        color: @color-brand-facebook;
+                    }
+                }
+                .twitter{
+                    &:hover{
+                        color: @color-brand-twitter;
+                    }
+                }
+                .linkedin{
+                    &:hover{
+                        color: @color-brand-linkedin;
+                    }
+                }
+                .google-plus{
+                    &:hover{
+                        color: @color-brand-google;
+                    }
+                }
+                .youtube{
+                    &:hover{
+                        color: @color-brand-youtube;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//scroll btn
+
+
+.scrollToTop{
+    width: 84px;
+    height: 84px;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: none;
+    background: url(../images/Back-to-Top.png) no-repeat center center;
+    background-size: cover;
+}
+.scrollToTop:hover{
+    text-decoration:none;
 }
 
