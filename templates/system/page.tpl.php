@@ -83,113 +83,229 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="<?php print $language->language ?>" lang="<?php print $language->language ?>" dir="<?php print $language->dir ?>">
     <head>
         <?php print $head; ?>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title><?php print $head_title; ?></title>
-            <?php print $styles; ?>
-            <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"></link>
-            <?php print $scripts; ?>
-            <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+        <title><?php print $head_title; ?></title>
+        <?php print $styles; ?>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"></link>
+        <?php print $scripts; ?>
+        <script type="text/javascript"><?php /* Needed to avoid Flash of Unstyled Content in IE */ ?></script>
     </head>
     <body class="<?php print $body_classes; ?>">
-        <div id="page" class="container test">
-            <div id="header">
-                <div id="logo-title">
 
-                    <?php if (!empty($logo)): ?>
-                        <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" id="logo">
-                            <img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-                        </a>
-                    <?php endif; ?>
-
-                    <div id="name-and-slogan">
-                        <?php if (!empty($site_name)): ?>
-                            <div id="site-name">
-                                <a href="<?php print $front_page ?>" title="<?php print t('Home'); ?>" rel="home"><span><?php print $site_name; ?></span></a>
+        <header class="sticky">
+            <div class="topbar">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="social-media pull-left">
+                                <ul class="ul-div">
+                                    <li>
+                                        <a href="https://www.facebook.com/sobellrhodes?fref=ts"><span class="fa fa-facebook-square facebook" aria-hidden="true"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/SobellRhodesLLP"><span class="fa fa-twitter-square twitter" aria-hidden="true"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.linkedin.com/company/sobell-rhodes-llp"><span class="fa fa-linkedin-square linkedin" aria-hidden="true"></span></a>
+                                    </li>
+                                </ul>
                             </div>
-                        <?php endif; ?>
+                        </div> <!-- /col -->
+                        <div class="col-sm-8">
+                            <div class="contact pull-right">
+                                <ul class="ul-div hidden-xs">
+                                    <li>
+                                        <span class="fa fa-phone phone" aria-hidden="true"></span><a href="tel:<?php print $company_phone ?>"><?php print $company_phone ?></a>
+                                    </li>
+                                    <li>
+                                        <span class="fa fa-envelope-o mail" aria-hidden="true"></span><a href="mailto:<?php print $site_mail ?>"><?php print $site_mail ?></a>
+                                    </li>
+                                </ul>
+                                <ul class="ul-div visible-xs">
+                                    <li>
+                                        <a href="tel:<?php print $company_phone ?>"><span class="fa fa-phone phone" aria-hidden="true"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="mailto:<?php print $site_mail ?>"><span class="fa fa-envelope-o mail" aria-hidden="true"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div> <!-- /col -->
+                    </div><!-- /row -->
+                </div><!-- /container -->
+            </div><!-- /top-header -->
 
-                        <?php if (!empty($site_slogan)): ?>
-                            <div id="site-slogan"><?php print $site_slogan; ?></div>
-                        <?php endif; ?>
-                    </div> <!-- /name-and-slogan -->
-                </div> <!-- /logo-title -->
 
-                <?php if (!empty($search_box)): ?>
-                    <div id="search-box"><?php print $search_box; ?></div>
-                <?php endif; ?>
+            <div class="main-navbar container">
+                <div class="row">
+                    <nav class="navbar navbar-default">
 
-                <?php if (!empty($header)): ?>
-                    <div id="header-region">
-                        <?php print $header; ?>
-                    </div>
-                <?php endif; ?>
+                        <div class="desk-nav hidden-xs">
+                            <div class="navbar-header">
+                                <?php if (!empty($logo)) { ?>
+                                    <a href="<?php print $front_page; ?>" title="<?php
+                                    print t($site_name);
+                                    ;
+                                    ?>" rel="home" id="logo" class="img-responsive logo">
+                                        <img src="<?php print $logo; ?>" alt="<?php print t($site_name); ?>" />
+                                    </a>
+                                <?php } ?>
+                            </div>
+                            <div id="navbar" class="navbar-collapse collapse">
+                                <div id="navigation" class="menu <?php
+                                if (!empty($primary_links)) {
+                                    print "withprimary";
+                                }
+                                ?> ">
+                                         <?php if (!empty($primary_links)): ?>
+                                        <div id="primary" class="clear-block">
+                                            <?php print theme('links', $primary_links, array('class' => 'links primary-links')); ?>
+                                        </div>
+                                    <?php endif; ?>
 
-            </div> <!-- /header -->
+                                </div> <!-- /navigation -->
+
+                            </div>
+                        </div>
+
+                        <div class="mob-nav visible-xs">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+
+
+                                <!-- header-logo -->
+                                <div id="logo" class="logo">
+                                    <?php if (!empty($logo)) { ?>
+                                        <a href="<?php print $front_page; ?>" title="<?php print t($site_name); ?>" rel="home" class="logo-link">
+                                            <img src="<?php print $logo; ?>" alt="<?php print t($site_name); ?>" />
+                                        </a>
+                                    <?php } ?>
+
+                                </div>
+                                <!-- /header-logo -->
+
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span> 
+                                </button>
+
+                            </div>
+                            <!-- Collection of nav links and other content for toggling -->
+                            <div id="navbarCollapse" class="collapse navbar-collapse">
+                                <?php print theme('links', $primary_links, array('class' => 'links primary-links nav navbar-nav')); ?>
+
+                            </div>
+                        </div>
+                    </nav>	
+                </div>
+            </div>
+
+        </header>
+
+
+
+        <div id="page" class="container">
+
 
             <div id="container" class="clear-block">
-
-                <div id="navigation" class="menu <?php if (!empty($primary_links)) {
-                    print "withprimary";
-                } if (!empty($secondary_links)) {
-                    print " withsecondary";
-                } ?> ">
-                    <?php if (!empty($primary_links)): ?>
-                        <div id="primary" class="clear-block">
-                        <?php print theme('links', $primary_links, array('class' => 'links primary-links')); ?>
-                        </div>
-                        <?php endif; ?>
-
-                    <?php if (!empty($secondary_links)): ?>
-                        <div id="secondary" class="clear-block">
-    <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
-                        </div>
-                <?php endif; ?>
-                </div> <!-- /navigation -->
-
                 <?php if (!empty($left)): ?>
-                    <div id="sidebar-left" class="column sidebar">
-    <?php print $left; ?>
+                    <div id="sidebar-left" class="column sidebar download">
+                        <?php print $left; ?>
                     </div> <!-- /sidebar-left -->
-                        <?php endif; ?>
+                <?php endif; ?>
 
                 <div id="main" class="column"><div id="main-squeeze">
-                            <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
-                            <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
+                        <?php if (!empty($breadcrumb)): ?><div id="breadcrumb"><?php print $breadcrumb; ?></div><?php endif; ?>
+                        <?php if (!empty($mission)): ?><div id="mission"><?php print $mission; ?></div><?php endif; ?>
 
                         <div id="content">
                             <?php if (!empty($title)): ?><h1 class="title" id="page-title"><?php print $title; ?></h1><?php endif; ?>
-                                <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
-                                <?php if (!empty($messages)): print $messages;
-                                endif; ?>
-                            <?php if (!empty($help)): print $help;
-                            endif; ?>
+                            <?php if (!empty($tabs)): ?><div class="tabs"><?php print $tabs; ?></div><?php endif; ?>
+                            <?php
+                            if (!empty($messages)): print $messages;
+                            endif;
+                            ?>
+                            <?php
+                            if (!empty($help)): print $help;
+                            endif;
+                            ?>
                             <div id="content-content" class="clear-block">
-<?php print $content; ?>
+                                <?php print $content; ?>
                             </div> <!-- /content-content -->
-                <?php print $feed_icons; ?>
+                            <?php print $feed_icons; ?>
                         </div> <!-- /content -->
 
                     </div></div> <!-- /main-squeeze /main -->
 
-<?php if (!empty($right)): ?>
-                    <div id="sidebar-right" class="column sidebar">
-    <?php print $right; ?>
+                <?php if (!empty($right)): ?>
+                    <div id="sidebar-right" class="column sidebar sidebar-right">
+                        <?php print $right; ?>
                     </div> <!-- /sidebar-right -->
-                    <?php endif; ?>
+                <?php endif; ?>
 
             </div> <!-- /container -->
 
-            <div id="footer-wrapper">
-                <div id="footer">
-            <?php print $footer_message; ?>
-<?php if (!empty($footer)): print $footer;
-endif; ?>
-                </div> <!-- /footer -->
-            </div> <!-- /footer-wrapper -->
 
-<?php print $closure; ?>
 
         </div> <!-- /page -->
 
+        <footer class="footer-wrapper" >
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-md-8 col-sm-12 ">
+
+                        <?php if (!empty($secondary_links)): ?>
+                            <div id="secondary" class="clear-block">
+                                <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
+                            </div>
+                        <?php endif; ?>   
+
+
+                        <?php
+                        if (!empty($footer)) {
+                            print $footer;
+                        }
+                        ?>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="social-media">
+                            <ul class="text-center list-inline">
+                                <li>
+                                    <a href="https://www.facebook.com/sobellrhodes?fref=ts"><span class="fa fa-2x fa-facebook-square facebook" aria-hidden="true"></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/SobellRhodesLLP"><span class="fa fa-2x fa-twitter-square twitter" aria-hidden="true"></span></a>
+                                </li>
+                                <li>
+                                    <a href="http://www.youtube.com/user/SobellRhodesLLP"><span class="fa fa-2x fa-youtube-square youtube" aria-hidden="true"></span></a>
+                                </li>
+                                <li>
+                                    <a href="https://plus.google.com/107252012201297601658/posts"><span class="fa fa-2x fa-google-plus-square google-plus" aria-hidden="true"></span></a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="logo">
+                            <img src="http://www.dev.sobellrhodes.gridhosted.co.uk/wp-content/themes/sobellrhodes/resources/img/logo-white.png" alt=""/>
+                        </div>
+                        <div class="developer">
+                            <p class="text-center">Designed and Developed by <br> <a href="http://vanillaactive.com" target="_blank" >Vanilla Active</a></p>
+                        </div>
+                    </div>
+                </div><!-- /footer -->
+            </div>
+            <div class="copyright text-center">
+                <div class="container">
+                    <?php print $footer_message; ?>
+                </div>
+            </div>
+
+
+        </footer> <!-- /footer-wrapper -->
+
+        <?php print $closure; ?>
+        <a href="#" class="scrollToTop"></a>
     </body>
 </html>

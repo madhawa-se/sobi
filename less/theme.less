@@ -26,6 +26,9 @@ h1,h2,h3,h4,h5,h6{
     font-family: @font-family-lato;
     font-weight: 300;
 }
+h2{
+    margin: 0;
+}
 
 ul,
 ul.menu{
@@ -47,6 +50,18 @@ ul.menu{
         padding: 0 !important;
     }
 }
+a.no-link:hover {
+    text-decoration: none;
+}
+h1,h2,h3,h4,h5,h6,div{
+    &.no-link{
+        a{
+            &:hover{
+                text-decoration: none;
+            }
+        }
+    }
+}
 .block ul {
     margin: 0 0 15px 15px;
     padding: 0;
@@ -64,6 +79,7 @@ img {
 }
 p {
     margin: 0 0 15px;
+    font-weight: 300;
 }
 .no-margin{
     margin: 0;
@@ -166,10 +182,6 @@ body{
 .center{
     text-align: center;
 }
-.no-link{
-    text-decoration: none;
-    cursor: pointer;
-}
 
 /*............... page layouts.............*/
 #container {
@@ -213,6 +225,26 @@ body{
     }
 }
 
+
+@-webkit-keyframes expand {
+    0% {
+        top: -50px
+    }
+    100% {
+        top: 0px
+    }
+}
+
+.item-list .pager {
+    margin: 20px 0 5px;
+
+    li > a, .pager li > span {
+        border: 1px solid @color-green;
+        color: @color-green;
+    }
+}
+
+
 //font awesome
 .icon-awesome{
     padding-right: 12px;
@@ -249,7 +281,19 @@ header{
         padding: 10px;
     }
 
+    &.top-nav-fixed{
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #fff;
+        -webkit-animation: expand 1s;
 
+        .topbar{
+            display: none;
+        }
+    }
     .social-media{
         ul {
             li {
@@ -443,6 +487,7 @@ header{
 footer.footer-wrapper{
     color:@color-white;
     background-color: #2E2E2E;
+    font-weight:300;
     .info{
         color: @color-white;
         font-size: 12.56px;
@@ -474,9 +519,9 @@ footer.footer-wrapper{
         }
     }
     .secondary-links{
-        margin: 15px 0 0 0;
+        margin: 25px 0 18px 0;
         li{
-            padding:10px 0;
+            padding: 0;
             display: inline-block;
             a{
                 line-height: 40px;
@@ -491,8 +536,6 @@ footer.footer-wrapper{
 
                 }
             }
-
-
         }
     }
     a{
@@ -573,3 +616,85 @@ footer.footer-wrapper{
     text-decoration:none;
 }
 
+///// for news page /////
+
+.news-card{
+    font-weight: 300px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    border-bottom: 1px solid rgba(42, 112, 104, 0.43);
+
+    .title{
+        font-size: 1.120em;
+        margin-bottom:2px;
+        a{
+            color: @color-green;
+        }
+    }
+    .date{
+        font-size: 0.747em;
+        .posted{
+            color:@color-blue;
+        }
+    }
+    .teaser{
+        margin-top: 15px;
+        font-size: 0.880em;
+        line-height: 1.4;
+    }
+}
+
+//second level menus
+
+
+
+.sidebar-right{
+    .quick-menu{
+        margin: 0 0 44px;
+        padding: 26px 0;
+        h2 {
+            margin: 0 0 60px;
+            font-size: 1.280em;
+            line-height: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            padding: 0!important;
+            padding-bottom: 15px!important;
+            border-bottom: 3px solid @color-green;
+
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                margin: 0 0 36px;
+                padding: 0;
+                background: 0 0;
+                list-style: none;
+                font-size: 1em;
+                line-height: 26px;
+                font-weight: 300;
+                a {
+                    color: @color-gray;
+                    text-decoration: underline;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+                a.active-trail {
+                    color:@color-green;   
+                    &.active{
+                        text-decoration: none;  
+                    }
+                }
+                ul {
+                    margin: 27px 0 0;
+                    li {
+                        margin: 0 0 24px;
+                        padding: 0 0 0 20px;
+                    }
+                }
+            }
+        }
+    }
+}

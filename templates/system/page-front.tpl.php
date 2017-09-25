@@ -93,7 +93,7 @@
     </head>
     <body class="<?php print $body_classes; ?>">
 
-        <header>
+        <header class="sticky">
             <div class="topbar">
                 <div class="container">
                     <div class="row">
@@ -240,7 +240,7 @@
                     </div></div> <!-- /main-squeeze /main -->
 
                 <?php if (!empty($right)): ?>
-                    <div id="sidebar-right" class="column sidebar">
+                    <div id="sidebar-right" class="column sidebar sidebar-right">
                         <?php print $right; ?>
                     </div> <!-- /sidebar-right -->
                 <?php endif; ?>
@@ -259,7 +259,7 @@
 
                         <?php if (!empty($secondary_links)): ?>
                             <div id="secondary" class="clear-block">
-                                <?php print theme('links', $secondary_links, array('class' => 'links secondary-links ul-div')); ?>
+                                <?php print theme('links', $secondary_links, array('class' => 'links secondary-links')); ?>
                             </div>
                         <?php endif; ?>   
 

@@ -7,7 +7,7 @@ stylesheets[all][] = css/bootstrap.css
 stylesheets[all][] = css/theme.css
 stylesheets[print][] = css/print.css
 scripts[] = js/bootstrap.min.js
-scripts[] = js/scroll_top.js
+scripts[] = js/app.js
 
 
 regions[left]                   = Left sidebar
